@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= f.fields_for :seo_tag do |seo_tag_form| %>
+      <%= render partial: 'admin/shared/localized_fields', locals: {
+        fields: {seo_meta_description: {type: :string},
+                 seo_title: {type: :string},
+                 seo_meta_keywords: {type: :string},
+                 seo_robot: {type: :string},
+                 seo_canonical: {type: :string},
+                 og_image: {type: :string}},
+        object: f.object,
+        f: seo_tag_form,
+        tab_id: "#{f.object.class.name}_#{f.object.id}_seo_fields"} %>
+    <% end %>
+  </div>
+</div>
